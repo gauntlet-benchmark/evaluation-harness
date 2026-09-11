@@ -1,0 +1,35 @@
+# Licensing
+
+This repository is a fork of the REAL / AGI SDK project and is distributed
+under two licenses.
+
+## 1. Upstream REAL / AGI SDK code — Apache License 2.0
+
+    Copyright 2025 AGI, Inc.
+
+The agent run mechanics inherited from REAL (browser harness, task loop,
+action/observation interface, and other upstream files) remain licensed under
+the Apache License, Version 2.0. The full text is in [`LICENSE-APACHE`](./LICENSE-APACHE).
+
+This is a modified version of the original work: files have been changed,
+removed, and added relative to upstream. The original copyright and license
+notices are retained as required by the Apache License, Section 4.
+
+## 2. New contributions — Creative Commons Attribution 4.0 (CC BY 4.0)
+
+    Copyright 2026 Gauntlet Bench
+
+Contributions original to this fork — including the evaluation framework, the
+batch runner, the objective and LLM-as-a-judge evaluators, the GauntletBench
+task suites, and associated assets — are licensed under the Creative Commons
+Attribution 4.0 International License. The full text is in
+[`LICENSE-CC-BY-4.0`](./LICENSE-CC-BY-4.0), and a summary is available at
+https://creativecommons.org/licenses/by/4.0/.
+
+## Which license applies to a given file?
+
+Where a file carries its own license header, that header governs. Otherwise,
+files derived from or originating in upstream REAL / AGI SDK are covered by the
+Apache License 2.0, and files original to this fork are covered by CC BY 4.0.
+Nothing here restricts the rights granted by the Apache License 2.0 over the
+upstream portions.

@@ -1,0 +1,61 @@
+__pycache__/
+*.egg-info/
+
+results
+*.DS_Store
+*.pyc
+browser-use
+browseruse
+learnstagehand
+udrive
+build
+.trash
+# Environment variables
+.env
+*.env
+.env.*
+.venv32
+**/.claude/settings.local.json
+.vscode/
+results_*/
+tasks_new/
+# Task suites and ground truth live in a separate repo; users copy them in (see README).
+/tasks/
+/assets/*_ground_truth/
+tests/
+human_results/
+legacy_results/
+final_results/
+*_hth_circuit/
+seed_runs/
+.codex
+eval_figures*
+size_runs/
+gpt54_results/
+seed_runs*
+run.sh
+aggregated_*
+reasoning_runs/
+human_annotation_trajectories/
+psr_*
+codes.txt
+images/
+human*
+.venv/
+atlast_results/
+.claude/
+set_env.sh
+seed_runs_easy/
+smoke_results/
+logs/
+Running_the_Gauntlet__Re_evaluating_the_Capability_of_Agentic_Systems_Beyond_Familiar_Environments__arxiv_ (1)/
+# Superseded errored run dirs, moved aside rather than deleted (see scripts/).
+scratch_archive/
+codes.md
+scripts/
+gpt6astra_videos/
+hard_picks/
+hard_runs/
+# The vendored CUA sample app ships its own tests/ and scripts/.
+!openai-cua-sample-app/**/tests/
+!openai-cua-sample-app/**/scripts/

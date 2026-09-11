@@ -1,0 +1,58 @@
+{
+  "max_parallel": 5,
+  "fail_fast": false,
+  "termination_grace_period": 2,
+  "entrypoint": "cua_runner/run_cua.py",
+  "defaults": {
+    "run_all": true,
+    "headless": true,
+    "max_steps": 50,
+    "initial_delay": 120
+  },
+  "models": {
+    "gpt-6-astra": {
+      "testcases": [
+        {
+          "name": "3d",
+          "task_file": "tasks/3d.yaml",
+          "prefix_prompt_file": "app_background/3d.md",
+          "url": "https://3d-clone-rouge.vercel.app/",
+          "post_run_url": "/export-clear",
+          "results_dir": "./seed_runs/run1/3d/gpt6astra"
+        },
+        {
+          "name": "circuit",
+          "task_file": "tasks/circuit.yaml",
+          "prefix_prompt_file": "app_background/circuit.md",
+          "url": "https://gauntletbench-circuit.up.railway.app/circuitjs.html?startCircuit=blank.txt",
+          "post_run_js_snippet_path": "assets/circuit_txt_export_snippet.js",
+          "results_dir": "./seed_runs/run1/circuit/gpt6astra"
+        },
+        {
+          "name": "flightradar",
+          "task_file": "tasks/flightradar.yaml",
+          "prefix_prompt_file": "app_background/flightradar.md",
+          "url": "https://gauntletbench-flight-analyser-app.hf.space/",
+          "initial_delay": 330,
+          "results_dir": "./seed_runs/run1/flightradar/gpt6astra"
+        },
+        {
+          "name": "graph",
+          "task_file": "tasks/graph.yaml",
+          "prefix_prompt_file": "app_background/graph.md",
+          "url": "https://gauntletbench-graph.vercel.app/workflows",
+          "post_run_url": "/export",
+          "results_dir": "./seed_runs/run1/graph/gpt6astra"
+        },
+        {
+          "name": "video",
+          "task_file": "tasks/video.yaml",
+          "prefix_prompt_file": "app_background/video.md",
+          "url": "https://voidcut.vercel.app/",
+          "post_run_url": "/finish",
+          "results_dir": "./seed_runs/run1/video/gpt6astra"
+        }
+      ]
+    }
+  }
+}

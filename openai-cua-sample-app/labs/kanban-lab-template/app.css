@@ -1,0 +1,396 @@
+:root {
+  --bg: #f7f8fa;
+  --panel: #ffffff;
+  --panel-muted: #fbfbfc;
+  --line: #e6e8ee;
+  --line-strong: #d5d9e2;
+  --ink: #16191f;
+  --muted: #6b7280;
+  --muted-strong: #4b5565;
+  --blue: #5b5bd6;
+  --blue-soft: #f0f1ff;
+  --green-soft: #edf7f1;
+  --amber-soft: #fff6e7;
+  --red-soft: #fff0ed;
+  color-scheme: light;
+  font-family:
+    "Inter",
+    "Avenir Next",
+    "Segoe UI",
+    sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+.appShell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem 0.7rem;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbarPrimary {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.breadcrumbsCurrent {
+  color: var(--muted-strong);
+}
+
+.topbarTitleBlock {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.topbarSubtitle {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.topbarActions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.toolbarButton,
+.toolbarChip {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.95rem;
+  padding: 0.28rem 0.72rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--muted-strong);
+  font-size: 0.73rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.toolbarButtonStrong {
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.workspace {
+  min-width: 0;
+  padding: 0.7rem 1rem 1rem;
+}
+
+.boardToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.boardToolbarGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.toolbarChip {
+  background: #fbfbfc;
+}
+
+.boardSurface {
+  min-width: 0;
+  min-height: calc(100vh - 8rem);
+}
+
+.board {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(17rem, 1fr));
+  gap: 1rem;
+  min-height: 100%;
+}
+
+.column {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  background: #f7f8fa;
+}
+
+.columnHeader {
+  padding: 0.65rem 0.7rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.columnHeading {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.columnDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  flex: none;
+}
+
+.columnDotBacklog {
+  background: #98a1b2;
+}
+
+.columnDotProgress {
+  background: #7c74f1;
+}
+
+.columnDotDone {
+  background: #4aa86e;
+}
+
+.columnTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.columnHeader strong {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.columnBody {
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+  min-height: 100%;
+  padding: 0.7rem;
+}
+
+.columnBody.dragActive {
+  background: #f2f3f7;
+}
+
+.card {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  cursor: grab;
+}
+
+.card:hover {
+  border-color: var(--line-strong);
+}
+
+.card.dragging {
+  opacity: 0.42;
+}
+
+.card.dropBefore {
+  box-shadow: inset 0 2px 0 var(--blue);
+}
+
+.card.dropAfter {
+  box-shadow: inset 0 -2px 0 var(--blue);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.cardIdentity {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.cardKey {
+  color: var(--muted);
+  font-size: 0.69rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.cardPriorityDot {
+  width: 0.46rem;
+  height: 0.46rem;
+  border-radius: 999px;
+  flex: none;
+}
+
+.cardPriorityP1 {
+  background: #df6f5c;
+}
+
+.cardPriorityP2 {
+  background: #cb922d;
+}
+
+.cardPriorityP3 {
+  background: #58a06a;
+}
+
+.cardLabel {
+  padding: 0.08rem 0.42rem;
+  border: 1px solid var(--line);
+  background: var(--panel-muted);
+  color: var(--muted-strong);
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+
+.cardMenu {
+  color: #9aa3b2;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.cardTitle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+}
+
+.cardSummary {
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.35;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.cardMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  min-width: 0;
+}
+
+.cardAssignee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 999px;
+  background: #eef1f5;
+  color: var(--muted-strong);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  flex: none;
+}
+
+.cardMetaLabel {
+  color: var(--muted);
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.cardMetaDivider {
+  width: 0.16rem;
+  height: 0.16rem;
+  border-radius: 999px;
+  background: #c2cada;
+  flex: none;
+}
+
+.cardDue {
+  color: var(--muted);
+  font-size: 0.69rem;
+}
+
+@media (max-width: 980px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+
+  .boardSurface {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .topbar,
+  .boardToolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .workspace {
+    padding: 0.7rem 0.75rem 0.9rem;
+  }
+}

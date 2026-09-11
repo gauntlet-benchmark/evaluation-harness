@@ -1,0 +1,102 @@
+{
+  "max_parallel": 5,
+  "fail_fast": false,
+  "defaults": {
+    "run_all": true,
+    "headless": true,
+    "max_steps": 100,
+    "seed": 42,
+    "use_screenshot": true,
+    "initial_delay": 10
+  },
+  "models": {
+    "litellm/azure/claude-opus-4.6": {
+      "testcases": [
+        {
+          "name": "3d",
+          "task_file": "tasks/3d.yaml",
+          "prefix_prompt_file": "app_background/3d.md",
+          "url": "https://3d-clone-rouge.vercel.app/",
+          "post_run_url": "/export-clear",
+          "results_dir": "./seed_runs/run1/3d/MODEL"
+        },
+        {
+          "name": "circuit",
+          "task_file": "tasks/circuit.yaml",
+          "prefix_prompt_file": "app_background/circuit.md",
+          "url": "https://gauntletbench-circuit.up.railway.app/circuitjs.html?startCircuit=blank.txt",
+          "post_run_js_snippet_path": "assets/circuit_txt_export_snippet.js",
+          "results_dir": "./seed_runs/run1/circuit/MODEL"
+        },
+        {
+          "name": "flightradar",
+          "task_file": "tasks/flightradar.yaml",
+          "prefix_prompt_file": "app_background/flightradar.md",
+          "url": "https://gauntletbench-flight-analyser-app.hf.space/",
+          "initial_delay": 330,
+          "results_dir": "./seed_runs/run1/flightradar/MODEL"
+        },
+        {
+          "name": "graph",
+          "task_file": "tasks/graph.yaml",
+          "prefix_prompt_file": "app_background/graph.md",
+          "url": "https://gauntletbench-graph.vercel.app/workflows",
+          "post_run_url": "/export",
+          "results_dir": "./seed_runs/run1/graph/MODEL"
+        },
+        {
+          "name": "video",
+          "task_file": "tasks/video.yaml",
+          "prefix_prompt_file": "app_background/video.md",
+          "url": "https://voidcut.vercel.app/",
+          "post_run_url": "/finish",
+          "results_dir": "./seed_runs/run1/video/MODEL"
+        }
+      ]
+    },
+    "openrouter/google/gemini-3.1-pro-preview": {
+      "testcases": [
+        {
+          "name": "3d",
+          "task_file": "tasks/3d.yaml",
+          "prefix_prompt_file": "app_background/3d.md",
+          "url": "https://3d-clone-rouge.vercel.app/",
+          "post_run_url": "/export-clear",
+          "results_dir": "./seed_runs/run1/3d/gemini31pro"
+        },
+        {
+          "name": "circuit",
+          "task_file": "tasks/circuit.yaml",
+          "prefix_prompt_file": "app_background/circuit.md",
+          "url": "https://gauntletbench-circuit.up.railway.app/circuitjs.html?startCircuit=blank.txt",
+          "post_run_js_snippet_path": "assets/circuit_txt_export_snippet.js",
+          "results_dir": "./seed_runs/run1/circuit/gemini31pro"
+        },
+        {
+          "name": "flightradar",
+          "task_file": "tasks/flightradar.yaml",
+          "prefix_prompt_file": "app_background/flightradar.md",
+          "url": "https://gauntletbench-flight-analyser-app.hf.space/",
+          "initial_delay": 330,
+          "results_dir": "./seed_runs/run1/flightradar/gemini31pro"
+        },
+        {
+          "name": "graph",
+          "task_file": "tasks/graph.yaml",
+          "prefix_prompt_file": "app_background/graph.md",
+          "url": "https://gauntletbench-graph.vercel.app/workflows",
+          "post_run_url": "/export",
+          "results_dir": "./seed_runs/run1/graph/gemini31pro"
+        },
+        {
+          "name": "video",
+          "task_file": "tasks/video.yaml",
+          "prefix_prompt_file": "app_background/video.md",
+          "url": "https://voidcut.vercel.app/",
+          "post_run_url": "/finish",
+          "results_dir": "./seed_runs/run1/video/gemini31pro"
+        }
+      ]
+    }
+  }
+}

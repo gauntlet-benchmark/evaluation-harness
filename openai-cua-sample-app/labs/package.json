@@ -1,0 +1,15 @@
+{
+  "name": "cua-sample-labs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:live": "node --env-file-if-exists=../.env ../node_modules/vitest/vitest.mjs run --config vitest.live.config.ts",
+    "lint": "eslint . --max-warnings=0",
+    "check": "pnpm lint && pnpm test"
+  },
+  "devDependencies": {
+    "@cua-sample/contracts": "workspace:*",
+    "playwright": "1.58.2"
+  }
+}

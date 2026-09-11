@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Launch Planner</title>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <div class="appShell">
+      <header class="topbar">
+        <div class="topbarPrimary">
+          <div class="breadcrumbs">
+            <span>Atlas</span>
+            <span class="breadcrumbsCurrent">Roadmap</span>
+          </div>
+          <div class="topbarTitleBlock">
+            <h1>Launch Planner</h1>
+            <p class="topbarSubtitle">Sprint 14</p>
+          </div>
+        </div>
+
+        <div class="topbarActions">
+          <button class="toolbarButton" type="button">Share</button>
+          <button class="toolbarButton toolbarButtonStrong" data-testid="reset-board" type="button">
+            Reset
+          </button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="boardToolbar" aria-label="Board controls">
+          <div class="boardToolbarGroup">
+            <button class="toolbarChip" type="button">Board</button>
+            <button class="toolbarChip" type="button">Group: Status</button>
+            <button class="toolbarChip" type="button">Sub-issues</button>
+          </div>
+          <div class="boardToolbarGroup">
+            <button class="toolbarChip" type="button">Filter</button>
+            <button class="toolbarChip" type="button">Display</button>
+          </div>
+        </section>
+
+        <section class="boardSurface" aria-label="Current sprint board">
+          <div class="board" data-testid="kanban-board">
+            <section class="column columnBacklog">
+              <header class="columnHeader">
+                <div class="columnHeading">
+                  <span class="columnDot columnDotBacklog" aria-hidden="true"></span>
+                  <span class="columnTitle">Backlog</span>
+                  <strong data-testid="column-count-backlog">0</strong>
+                </div>
+              </header>
+              <div class="columnBody" data-column-id="backlog" data-testid="column-backlog"></div>
+            </section>
+            <section class="column columnInProgress">
+              <header class="columnHeader">
+                <div class="columnHeading">
+                  <span class="columnDot columnDotProgress" aria-hidden="true"></span>
+                  <span class="columnTitle">In Progress</span>
+                  <strong data-testid="column-count-in-progress">0</strong>
+                </div>
+              </header>
+              <div
+                class="columnBody"
+                data-column-id="in_progress"
+                data-testid="column-in-progress"
+              ></div>
+            </section>
+            <section class="column columnDone">
+              <header class="columnHeader">
+                <div class="columnHeading">
+                  <span class="columnDot columnDotDone" aria-hidden="true"></span>
+                  <span class="columnTitle">Done</span>
+                  <strong data-testid="column-count-done">0</strong>
+                </div>
+              </header>
+              <div class="columnBody" data-column-id="done" data-testid="column-done"></div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

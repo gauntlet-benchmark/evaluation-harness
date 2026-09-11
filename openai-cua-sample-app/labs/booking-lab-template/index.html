@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Northstar Stays</title>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <div class="appShell">
+      <header class="topbar">
+        <div class="topbarInner">
+          <div>
+            <p class="brandLabel">Northstar Hotels & Resorts</p>
+            <h1>Book a stay</h1>
+          </div>
+          <nav class="topbarMeta" aria-label="Primary">
+            <span>Offers</span>
+            <span>My trips</span>
+            <span>Sign in</span>
+          </nav>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="searchBar">
+          <div class="searchBarGroup">
+            <label class="field fieldCompact">
+              <span>Neighborhood</span>
+              <select data-testid="filter-neighborhood">
+                <option value="">Any</option>
+                <option value="Marina District">Marina District</option>
+                <option value="Embarcadero">Embarcadero</option>
+                <option value="Mission Bay">Mission Bay</option>
+              </select>
+            </label>
+            <div class="toggleRow">
+              <label class="togglePill">
+                <input data-testid="filter-breakfast" type="checkbox" />
+                <span>Breakfast included</span>
+              </label>
+              <label class="togglePill">
+                <input data-testid="filter-workspace" type="checkbox" />
+                <span>Workspace desk</span>
+              </label>
+            </div>
+          </div>
+          <button class="searchButton" data-testid="apply-search-filters" type="button">
+            Search
+          </button>
+        </section>
+
+        <section class="resultsColumn">
+          <section class="resultsPanel">
+            <div class="resultsHeader">
+              <div>
+                <p class="sectionLabel">Available Hotels</p>
+                <h2>San Francisco results</h2>
+              </div>
+              <span class="resultsCount" data-testid="filter-status">3 stays</span>
+            </div>
+            <div class="resultList" data-testid="results-list"></div>
+          </section>
+        </section>
+
+        <aside class="bookingColumn">
+          <section class="bookingPanel">
+            <div class="bookingPanelHeader">
+              <div>
+                <p class="sectionLabel">Reservation Summary</p>
+                <h2>Review and reserve</h2>
+              </div>
+              <span class="bookingStatus" data-role="booking-state-pill">Pending</span>
+            </div>
+
+            <div class="selectedStayCard" data-testid="selected-stay">
+              <strong>Select a stay</strong>
+              <p>Choose a hotel from the results to continue.</p>
+            </div>
+
+            <form class="reservationForm" data-testid="reservation-form">
+              <label class="field">
+                <span>Guest name</span>
+                <input data-testid="guest-name" type="text" />
+              </label>
+              <label class="field">
+                <span>Guest email</span>
+                <input data-testid="guest-email" type="email" />
+              </label>
+              <div class="fieldGrid">
+                <label class="field">
+                  <span>Check-in</span>
+                  <input data-testid="check-in" type="date" />
+                </label>
+                <label class="field">
+                  <span>Check-out</span>
+                  <input data-testid="check-out" type="date" />
+                </label>
+              </div>
+              <label class="field">
+                <span>Special request</span>
+                <textarea data-testid="special-request" rows="4"></textarea>
+              </label>
+              <button class="confirmButton" data-testid="confirm-reservation" type="button">
+                Confirm stay
+              </button>
+            </form>
+
+            <section class="confirmationCard" data-role="confirmation-card">
+              <p class="sectionLabel">Confirmation</p>
+              <h3 data-role="confirmation-title">No reservation yet</h3>
+              <p data-role="confirmation-copy">
+                Reservation details will appear here after booking is confirmed.
+              </p>
+            </section>
+          </section>
+        </aside>
+      </main>
+
+      <div class="telemetry" hidden>
+        <span data-testid="booking-status">Reservation pending</span>
+        <span data-testid="confirmation-hotel">none</span>
+        <span data-testid="confirmation-guest">none</span>
+        <span data-testid="confirmation-dates">none</span>
+        <span data-testid="confirmation-request">none</span>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

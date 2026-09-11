@@ -1,0 +1,32 @@
+# The harness itself lives in src/agisdk/ and is installed from this repo:
+#     pip install -r requirements.txt
+#     pip install -e . --no-deps
+# Do NOT add `agisdk` from PyPI here — it shadows the local tree and silently
+# replaces the provider code the benchmark runs on.
+
+numpy>=1.20.0
+pillow>=10.0.0,<11.0.0
+# <1.0: gymnasium 1.0 removed attribute forwarding on env wrappers, which the
+# harness relies on to reach the Playwright page. The code now uses
+# .unwrapped, but the pin keeps requirements.txt consistent with pyproject.
+gymnasium>=0.28.0,<1.0
+playwright>=1.20.0
+tqdm>=4.62.0
+python-dotenv>=0.19.0
+pyparsing>=3.0.0
+beautifulsoup4>=4.10.0
+lxml>=6.0.1
+tiktoken>=0.3.0
+ray>=2.8.0
+rich>=10.0.0
+requests>=2.25.0
+httpx>=0.23.0,<0.28.0
+pyyaml>=6.0
+
+# Model providers
+openai>=1.0.0
+anthropic>=0.86.0
+
+# Evaluation
+fire>=0.5.0
+networkx>=3.0
